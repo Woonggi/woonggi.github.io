@@ -5,7 +5,7 @@ title: Home
 
 #Woonggi Eun
 
-Game Engine / Networking / Graphics
-- KapokGameEngine
-- ENet Multiplayer
-- Graphics
+TODO:
+- Resume upload
+- links for portfolio
+- development log
