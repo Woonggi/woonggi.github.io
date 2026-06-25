@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    {% if page.year %}
+    <p><strong>Year:</strong> {{ page.year }}</p>
+    {% endif %}
+    {% if page.status %}
+    <p><strong>Status:</strong> {{ page.status }}</p>
+    {% endif %}
+    {% if page.stack %}
+    <p><strong>Tech:</strong> {{ page.stack | join: ", " }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <p><a href="{{ '/projects/' | relative_url }}">Back to Projects</a></p>
+</article>

@@ -6,12 +6,21 @@ permalink: /projects/
 
 # Projects
 
-This page is a placeholder for selected projects.
+This page lists projects by year. Each item links to a dedicated detail page that can be expanded over time.
 
-Planned content:
+{% assign year_groups = site.projects | sort: "year" | reverse | group_by: "year" %}
+{% for group in year_groups %}
+## {{ group.name }}
 
-- Featured projects with short summaries
-- Links to GitHub repositories or live demos
-- Notes on tools, roles, and outcomes
+{% assign projects = group.items | sort: "title" %}
+{% for project in projects %}
+### [{{ project.title }}]({{ project.url | relative_url }})
 
-More details coming soon.
+{{ project.summary }}
+
+{% if project.stack %}
+Tech: {{ project.stack | join: ", " }}
+{% endif %}
+
+{% endfor %}
+{% endfor %}
